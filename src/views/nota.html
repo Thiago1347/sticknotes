@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Impedir a execução de scripts externos-->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
+    <!--titulo da janela-->
+    <title>Sticky notes</title>
+    <!-- Bootstrap-->
+    <!-- <link rel="stylesheet" href="../public/css/bootstrap.min.css">-->
+    <!--CSS Personalizado ATENÇÃO!!!  Sempre após o CSS do bootstrap-->
+    <link rel="stylesheet" href="../public/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <section class="novaNota">
+            <H1>Nova Nota</H1>
+            <form>
+                <input type="text" placeholder="Escreva sua nota..." required>
+                <h2>Escolha a cor</h2>
+                <select>
+                    <option value="amarelo">amarelo</option>
+                    <option value="azul">azul</option>
+                    <option value="verde">verde</option>
+                    <option value="rosa">rosa</option>
+                    <option value="laranja">laranja</option>
+                </select>
+                <button type="submit">Salvar</button>
+            </form>
+        </section>
+    </div>
+    <!-- Bootstrap-->
+    <!-- <script src="../public/js/bootstrap.min.js"></script>-->
+
+    <!-- Processo de renderização-->
+    <script src="rendererNota.js"></script>
+</body>
+
+</html>
