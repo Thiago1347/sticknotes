@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Impedir a execução de scripts externos-->
-      <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'"> 
-    <!--titulo da janela-->
-    <title>Sticky notes</title>
-    <!-- Bootstrap-->
-    <!-- <link rel="stylesheet" href="../public/css/bootstrap.min.css">-->
-     <!--CSS Personalizado ATENÇÃO!!!  Sempre após o CSS do bootstrap-->
-     <link rel="stylesheet" href="../public/css/style.css">
+    <!-- Impedir-->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
+    <!--Titulo da Janela-->
+    <title>Sticky Notes</title>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <!-- CSS Personalizado ATENÇÃO!!! sempre apos o CSS do Bootstrap-->
+    <link rel="stylesheet" href="../public/css/style.css">
 </head>
+
 <body>
     <div class="container">
-   
-</div>
+        <!-- renderizar as notas(li será gerado de forma dinâmica pelo JS de acordo co o numero)-->
+         <ul id="listNotes"></ul>
+    </div>
 
-<footer>
- <p id="dataAtual"></p>
- <img src="../public/img/dboff.png" alt="icone banco de dados" id="iconeDB">
-</footer>
-    <!-- Bootstrap-->
-   <!-- <script src="../public/js/bootstrap.min.js"></script>-->
+    <footer>
+        <p id="dataAtual"></p>
+        <img src="../public/img/dboff.png" alt="icone banco de dados" id="iconeDB">
+    </footer>
 
-    <!-- Processo de renderização-->
+    <!--Boodstrap-->
+    <!--<script src="../public/js/bootstrap.min.js"></script>-->
+
+    <!--Processo de Renderização-->
     <script src="renderer.js"></script>
 </body>
+
 </html>

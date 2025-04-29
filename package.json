@@ -1,7 +1,7 @@
 {
   "name": "sticknotes",
   "version": "1.0.0",
-  "description": "Projeto de notas autoadesivas (estilo Post-it) usando um framework Electron e o banco MongoDB",
+  "description": "Projeto de notas autoadesivas estilo post-it, usando um framework Electron e o banco de dados MongoDB",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -9,16 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Thiago1347/sticknotes.git"
+    "url": "git+https://github.com/PatrickHeiisen/sticknotes.git"
   },
-  "author": "Thiago Nascimento",
+  "author": "Patrick G",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Thiago1347/sticknotes/issues"
+    "url": "https://github.com/PatrickHeiisen/sticknotes/issues"
   },
-  "homepage": "https://github.com/Thiago1347/sticknotes#readme",
+  "homepage": "https://github.com/PatrickHeiisen/sticknotes#readme",
   "devDependencies": {
-    "electron": "^34.3.0"
+    "electron": "^34.4.1"
   },
   "dependencies": {
     "mongoose": "^8.12.1"

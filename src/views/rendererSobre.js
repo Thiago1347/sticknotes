@@ -2,8 +2,8 @@
  * Processo de renderização do documento sobre.html
  */
 
-// Enivar uma mensagem para o projeto principal fechar a janela sobre
+// enviar uma mensagem para o processo principal fechar a janela sobre
 function fechar(){
-    //executar a função aboutExit() vinculada ao preload.js, através da api do electron(ipcRenderer)
-   api.aboutExit()
+    // Executar a função aboutExit() vinculada ao preload atraves da api do electron
+    api.aboutExit()
 }

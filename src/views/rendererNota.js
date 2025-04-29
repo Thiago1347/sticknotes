@@ -1,39 +1,55 @@
 /**
- *  Processo de r enderização do documento nota.html
+ * Processo de Renderização do documento html
  */
 
-//Para debugar a aplicação é necessário ativar as ferramentas do desenvolvedor <ctrl><shift><i>
+// Para debugar  e testar a aplicação e necessario ativar as ferramentas de desenvolvedor
+//console.log("teste")
 
 // capturar o foco da caixa de texto
-const foco = document.getElementById('inputNote') //'inputNote é o id'
+const foco = document.getElementById('inputNote')
 
-//Alterar as propriedades do documento html ao iniciar a aplicação
-document.addEventListener('DOMContentLoaded', () => {
-    foco.focus() //iniciar o documento com o foco na caixa de texto
+// alterar as propriedades do documento html ao iniciar a aplicação
+document.addEventListener('DOMContentLoaded', () =>{
+    foco.focus() //iniciar o documento com foco na caixa de texto
 })
 
-// Capturar os dados do formulario (Passo 1: - fluxo)
+// capturar os dados do formulario (Passo 1: fluxo)
 let frmNote = document.getElementById('frmNote')
 let note = document.getElementById('inputNote')
 let color = document.getElementById('selectColor')
 
-// ==============================================
-// == CRUD Create ===============================
+//==================================================================
+// == CRUD Create ==================================================
 
 // Evento relacionado ao botão submit
-frmNote.addEventListener('submit',async (event) => {
-    // evitar o comportamento padrão (recarregar a página)
+frmNote.addEventListener('submit', async (event) => {
+    // evitar o comportamento padrão (recarregar a pagina)
     event.preventDefault()
-    // IMPORTANTE! (teste de recebimento dos dados do form - Passo 1)
+    // Importante (teste de recebimento dos dados do form - Passo 1)
     console.log(note.value, color.value)
-    // Criar um objeto para enviar ao main os dados da nota
+    // criar um objeto para enviar para o main os dados da nota
     const stickyNote = {
         textNote: note.value,
         colorNote: color.value
     }
-    // Enivar o objeto para enivar o main(Passo 2: fluxo)
+    // Enviar o objeto para o main (Passo 2: fluxo)
     api.createNote(stickyNote)
 })
 
-// == Fim - CRUD Create =========================
-// ==============================================
+// == Fim - CRUD Create ============================================
+//==================================================================
+
+
+// ******************************************************************
+
+// ******************************************************************
+
+// === Resetar o Formulario =========================================
+api.resetForm((args) => {
+    // recarregar a pagina notas
+    location.reload()
+    // recarregar a apagina principal (atualizar notas)
+    api.updateList()
+})
+
+// === Fim - Resetar o formulario ===================================

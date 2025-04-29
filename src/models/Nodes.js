@@ -3,8 +3,8 @@
  * Criação da coleção
  */
 
-//importação de recursos de mongoose
-const {model, Schema} =require('mongoose')
+// Importação dos recursos do mongoose
+const { model, Schema } = require('mongoose')
 
 // criação da estrutura da coleção
 const noteSchema = new Schema({
@@ -12,9 +12,9 @@ const noteSchema = new Schema({
         type: String
     },
     cor: {
-
+        type: String
     }
-},{versionKey: false }) 
+}, { versionKey: false })
 
-// exportar o modelo de dados para o main 
+// exportar o modelo de dados  para main
 module.exports = model('Notas', noteSchema)
