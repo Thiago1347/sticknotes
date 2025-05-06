@@ -1,29 +1,18 @@
-/**
- * Modulo de conexão com o banco de dados
- * Uso de framework mongoose
- */
 
-// importação do mongoose
-// Não esquecer de instalar o modulo (npm i mongoose)
 const mongoose = require('mongoose')
 
-// configuração do banco de dados
-// ip/link do servidor, autenticação , nome do banco
-const url = 'mongodb+srv://admin:123Senac@cluster2.w2es8.mongodb.net/dbnotes'
 
-//validação (evitar a abertura de varias conexões)
-let conectado = false
+const url = 'mongodb://localhost:27017'
 
-// metodo para conectar com o banco de dados
-const conectar = async () => {
-    // se não estiver conectado
-    if (!conectado) {
-        // conectar com o banco de dados
+let connected = false
+
+const connectDB = async () => {
+
+    if (!connected) {
         try {
             await mongoose.connect(url)
-            conectado = true
-            console.log("MondoDB Conectado")
-            return true // verificação para o main
+            connected = true
+            return true
         } catch (error) {
             console.log(error)
             return false
@@ -31,20 +20,17 @@ const conectar = async () => {
     }
 }
 
-// metodo para desconectar o banco de dados
-const desconectar = async () => {
-    // se estiver conectado 
-    if (conectado) {
-        // desconectar
+const disconnectDB = async () => {
+
+    if (connected) {
+
         try {
-            await mongoose.disconnect(url) // desconectar
-            conectado = false
-            console.log("MongoDB Desconectado")
+            await mongoose.disconnect(url)
+            connected = false
         } catch (error) {
             console.log(error)
         }
     }
 }
 
-// Exportar para o main os metodos conectar e desconectar
-module.exports = { conectar, desconectar }
+module.exports = { connectDB, disconnectDB }
