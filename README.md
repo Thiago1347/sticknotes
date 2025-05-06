@@ -2,3 +2,5 @@
 
 # Sticknotes
 Projeto de notas autoadesivas (estilo Post-it) usando um framework Electron e o banco de dados MongoDB.
+
+![](src/public/img/sticknotes.PNG)
